@@ -52,6 +52,7 @@ pub fn ecm(n: i64) -> (i64, i64) {
     }
 }
 
+// based on pseudocode from wikipedia
 fn mod_inverse(a: i64, n: i64) -> i64 {
     let mut t = 0;
     let mut newt = 1;

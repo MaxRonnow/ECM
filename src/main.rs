@@ -11,9 +11,8 @@ fn main() {
     io::stdin()
         .read_line(&mut input)
         .expect("Failed to read line");
-    let n: i128 = input.trim().parse().expect("Please type a valid integer");
+    let n: i128 = input.trim().parse().expect("Please type a valid number");
 
-    println!("Factoring: {}", n);
     let result = ecm(n);
-    println!("Result: {:?}", result);
+    println!("Factors: {:?}", result);
 }

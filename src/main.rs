@@ -12,7 +12,7 @@ fn main() {
         .expect("Failed to read line");
     let n: i128 = input.trim().parse().expect("Please type a valid number");
 
-    // runs it through the factorization altorithm
+    // runs it through the factorization algorithm
     let result = ecm(n);
     println!("Factors: {:?}", result);
 }

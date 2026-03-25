@@ -25,8 +25,6 @@ pub fn ecm(n: BigInt) -> (BigInt, BigInt) {
         let mut prev_point = cap_p;
 
         // loop runs until the division in the addition stage fails
-        //while !div_failed
-        //for _ in 1..10000
         while !div_failed {
             // initialize variables for calculations
             let mut temp_point = prev_point.clone();
@@ -54,7 +52,6 @@ pub fn ecm(n: BigInt) -> (BigInt, BigInt) {
                         x3.clone(),
                         (&alpha * (&temp_point.0 - &x3) - &temp_point.1).mod_floor(&n),
                     );
-                    //print!("point: {:?}", temp_point)
                 } else {
                     // if no inverse exists division fails and we have found a factor if 1 < k < N
                     div_failed = true;
@@ -76,7 +73,7 @@ pub fn ecm(n: BigInt) -> (BigInt, BigInt) {
 }
 
 // Function to calculate the modular inverse using the Extended Euclidean Algorithm
-// based on pseudocode from the wikipedia page "Extended Euclidean algorithm "
+// based on pseudocode from the wikipedia page "Extended Euclidean algorithm"
 fn mod_inverse(a: &BigInt, n: &BigInt) -> BigInt {
     let mut t = BigInt::ZERO;
     let mut newt = BigInt::from(1);
